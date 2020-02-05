@@ -337,7 +337,7 @@ module.exports.warmUp = async (event, context) => {
     const params = {
       ClientContext: Buffer.from(\`{"custom":\${func.config.payload}}\`).toString('base64'),
       FunctionName: func.name,
-      InvocationType: "RequestResponse",
+      InvocationType: "Event",
       LogType: "None",
       Qualifier: process.env.SERVERLESS_ALIAS || "$LATEST",
       Payload: func.config.payload
